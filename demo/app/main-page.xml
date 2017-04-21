@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page">
+  <StackLayout class="p-20">
+    <Button text="Start" tap="{{ start }}"></Button>
+    <Button text="Stop" tap="{{ stop }}"></Button>
+  </StackLayout>
+</Page>
