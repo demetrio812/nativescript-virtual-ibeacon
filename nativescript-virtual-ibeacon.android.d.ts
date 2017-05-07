@@ -12,6 +12,8 @@ export declare namespace android {
             }
         }
     }
+    namespace os {
+    }
 }
 export declare class NativescriptVirtualIbeacon extends Common {
     private beaconParser;

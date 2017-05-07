@@ -46,7 +46,7 @@ Those `demo` tasks are just general helpers. You may want to have more granular 
 cd demo
 
 // when developing, to ensure the latest code is built into the demo, it's a guarantee to remove the plugin and add it back
-tns plugin remove nativescript-nativescript-virtual-ibeacon
+tns plugin remove nativescript-virtual-ibeacon
 tns plugin add ..
 
 // manual platform adds

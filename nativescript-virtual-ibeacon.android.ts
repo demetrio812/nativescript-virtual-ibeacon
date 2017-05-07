@@ -23,21 +23,6 @@ export declare namespace android {
     }
 }
 
-// declare var Beacon: any;
-// declare var BeaconParser: any;
-// declare var BeaconTransmitter: any;
-
-/*export class MyAdvertiseCallback extends android.bluetooth.le.AdvertiseCallback {
- onStartFailure(errorCode) {
- dialogs.alert("Android Error");
- console.log("Android Error");
- }
-
- onStartSuccess(settingsInEffect) {
- dialogs.alert("Android Started2");
- console.log("Android Started2");
- }
- }*/
 export class NativescriptVirtualIbeacon extends Common {
 
     private beaconParser = null;
@@ -65,43 +50,25 @@ export class NativescriptVirtualIbeacon extends Common {
                 console.log("Android Started2");
             }
         });
+
+        let result = org.altbeacon.beacon.BeaconTransmitter.checkTransmissionSupported(this.getContext());
+        if (result!=0) {
+            console.log("iBeacon transmission NOT supported");
+        } else {
+            console.log("iBeacon transmission supported");
+        }
     }
 
     public startAdvertisingBeaconWithString(uuid, identifier, major, minor) {
 
-        /*
-         Beacon beacon = new Beacon.Builder()
-         .setId1("2f234454-cf6d-4a0f-adf2-f4911ba9ffa6")
-         .setId2("1")
-         .setId3("2")
-         .setManufacturer(0x0118) // Radius Networks.  Change this for other beacon layouts
-         .setTxPower(-59)
-         .setDataFields(Arrays.asList(new Long[] {0l})) // Remove this for beacon layouts without d: fields
-         .build();
-         // Change the layout below for other beacon types
-         BeaconParser beaconParser = new BeaconParser()
-         .setBeaconLayout("m:2-3=beac,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25");
-         BeaconTransmitter beaconTransmitter = new BeaconTransmitter(getApplicationContext(), beaconParser);
-         beaconTransmitter.startAdvertising(beacon, new AdvertiseCallback() {
+        // TODO integrate more checks
 
-         @Override
-         public void onStartFailure(int errorCode) {
-         Log.e(TAG, "Advertisement start failed with code: "+errorCode);
-         }
-
-         @Override
-         public void onStartSuccess(AdvertiseSettings settingsInEffect) {
-         Log.i(TAG, "Advertisement start succeeded.");
-         }
-         });
-
-         */
         let beacon = new org.altbeacon.beacon.Beacon.Builder()
             .setId1(uuid)
             .setId2(major + "")
             .setId3(minor + "")
-            .setManufacturer(0x4C00) // iBeacon layout
-            .setTxPower(-59)
+            .setManufacturer(0x004C)
+            .setTxPower(-56)
             // .setDataFields(Arrays.asList(new Long[] {0l})) // Remove this for beacon layouts without d: fields
             .build();
 

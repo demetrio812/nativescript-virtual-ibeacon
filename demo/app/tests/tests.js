@@ -1,4 +1,4 @@
-var NativescriptVirtualIbeacon = require("nativescript-nativescript-virtual-ibeacon").NativescriptVirtualIbeacon;
+var NativescriptVirtualIbeacon = require("nativescript-virtual-ibeacon").NativescriptVirtualIbeacon;
 var nativescriptVirtualIbeacon = new NativescriptVirtualIbeacon();
 
 // TODO replace 'functionname' with an acual function name of your plugin class and run with 'npm test <platform>'
