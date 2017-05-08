@@ -47,7 +47,7 @@ export class NativescriptVirtualIbeacon extends Common {
 
             onStartSuccess: function (settingsInEffect) {
                 //dialogs.alert("Android Started2");
-                console.log("Android Started2");
+                console.log("Android Started");
             }
         });
 

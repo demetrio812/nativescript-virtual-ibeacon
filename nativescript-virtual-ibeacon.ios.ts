@@ -11,13 +11,13 @@ export class NativescriptVirtualIbeacon extends Common {
         let uuidObj = new NSUUID({UUIDString: uuid});
         this.deviceBeacon.setWithProximityUUIDMajorMinorIdentifier(uuidObj, major, minor, identifier);
         this.deviceBeacon.startTransmitting();
-        dialogs.alert("iOS Started");
+        //dialogs.alert("iOS Started");
         console.log("iOS Started");
     }
 
     public stopAdvertisingBeacon() {
         this.deviceBeacon.stopTransmitting();
-        dialogs.alert("iOS Stopped");
+        //dialogs.alert("iOS Stopped");
         console.log("iOS Stopped");
     }
 
