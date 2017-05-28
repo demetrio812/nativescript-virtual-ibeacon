@@ -1,3 +1,6 @@
+[![npm](https://img.shields.io/npm/v/nativescript-virtual-ibeacon.svg)](https://www.npmjs.com/package/nativescript-virtual-ibeacon)
+[![npm](https://img.shields.io/npm/dt/nativescript-virtual-ibeacon.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-virtual-ibeacon)
+
 # NativeScript Virtual Beacon Transmitter
 Transform your phone in an iBeacon transmitter (only in foreground).
 

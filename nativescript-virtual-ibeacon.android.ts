@@ -1,6 +1,7 @@
 import {Common} from './nativescript-virtual-ibeacon.common';
 import * as dialogs from 'ui/dialogs';
 import * as application from "application";
+import * as utils from "utils/utils";
 
 declare var org: any;
 
@@ -33,7 +34,7 @@ export class NativescriptVirtualIbeacon extends Common {
     constructor() {
         super();
         this.beaconParser = new org.altbeacon.beacon.BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24");  // iBeacon layout
-        this.beaconTransmitter = new org.altbeacon.beacon.BeaconTransmitter(this.getContext(), this.beaconParser);
+        this.beaconTransmitter = new org.altbeacon.beacon.BeaconTransmitter(utils.ad.getApplicationContext(), this.beaconParser);
 
         this.MyAdvertiseCallback = android.bluetooth.le.AdvertiseCallback.extend({
             //constructor
@@ -51,7 +52,7 @@ export class NativescriptVirtualIbeacon extends Common {
             }
         });
 
-        let result = org.altbeacon.beacon.BeaconTransmitter.checkTransmissionSupported(this.getContext());
+        let result = org.altbeacon.beacon.BeaconTransmitter.checkTransmissionSupported(utils.ad.getApplicationContext());
         if (result!=0) {
             console.log("iBeacon transmission NOT supported");
         } else {
@@ -81,11 +82,6 @@ export class NativescriptVirtualIbeacon extends Common {
         this.beaconTransmitter.stopAdvertising();
         //dialogs.alert("Android Stopped");
         console.log("Android Stopped");
-    }
-
-    private getContext() {
-        let context = application.android.context;
-        return context
     }
 
 }
