@@ -1,6 +1,6 @@
 {
   "name": "nativescript-virtual-ibeacon",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "Nativescript plugin to simulate an iBeacon on iOS and Android",
   "main": "nativescript-virtual-ibeacon",
   "typings": "index.d.ts",

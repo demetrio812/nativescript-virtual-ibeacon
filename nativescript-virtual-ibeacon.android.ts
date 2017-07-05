@@ -43,17 +43,17 @@ export class NativescriptVirtualIbeacon extends Common {
              },*/
             onStartFailure: function (errorCode) {
                 //dialogs.alert("Android Error");
-                console.log("Android Error");
+                console.log("onStartFailure: " + errorCode);
             },
 
             onStartSuccess: function (settingsInEffect) {
                 //dialogs.alert("Android Started2");
-                console.log("Android Started");
+                console.log("onStartSuccess");
             }
         });
 
         let result = org.altbeacon.beacon.BeaconTransmitter.checkTransmissionSupported(utils.ad.getApplicationContext());
-        if (result!=0) {
+        if (result != 0) {
             console.log("iBeacon transmission NOT supported");
         } else {
             console.log("iBeacon transmission supported");

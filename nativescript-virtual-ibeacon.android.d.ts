@@ -21,7 +21,5 @@ export declare class NativescriptVirtualIbeacon extends Common {
     private MyAdvertiseCallback;
     constructor();
     startAdvertisingBeaconWithString(uuid: any, identifier: any, major: any, minor: any): void;
-    private beaconManager;
     stopAdvertisingBeacon(): void;
-    private getContext();
 }

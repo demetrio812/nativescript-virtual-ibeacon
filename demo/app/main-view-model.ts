@@ -10,10 +10,11 @@ export class HelloWorldModel extends Observable {
   }
 
   start() {
-    this.nativescriptVirtualIbeacon.startAdvertisingBeaconWithString("2f234454-cf6d-4a0f-adf2-f4911ba9ffa7", "HelloID", 123, 456);
+    this.nativescriptVirtualIbeacon.startAdvertisingBeaconWithString("2f234454-cf6d-4a0f-adf2-f4911ba9ffa6", "HelloID", 123, 456);
   }
 
   stop() {
     this.nativescriptVirtualIbeacon.stopAdvertisingBeacon();
+    //this.nativescriptVirtualIbeacon.startAdvertisingBeaconWithString("2f234454-cf6d-4a0f-adf2-f4911ba9ffa7", "HelloID2", 123, 321);
   }
 }
